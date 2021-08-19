@@ -1,0 +1,288 @@
+/* .attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); } */
+
+
+:root {
+  /********** Theme 1-Backgrounds **********/
+  --theme1-background: hsl(222, 26%, 31%);
+  --theme1-keypad-background: hsl(223, 31%, 20%);
+  --theme1-creen-background: hsl(224, 36%, 15%);
+
+  /********** Theme 1-Keys **********/
+  --theme1-blue-key-background: hsl(225, 21%, 49%);
+  --theme1-blue-key-shodow: hsl(224, 28%, 35%);
+  --theme1-red-key-background: hsl(6, 63%, 50%);
+  --theme1-red-key-shodow: hsl(6, 70%, 34%);
+  --theme1-white-key-backgorund: hsl(30, 25%, 89%);
+  --theme1-white-key-shadow: hsl(28, 16%, 65%);
+  
+  /********** Theme 1-Text **********/
+  --theme1-dark-blue-color: hsl(221, 14%, 31%);
+  --theme1-white-color: #ffffff;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-size: 2rem;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+  background-color: var(--theme1-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.attribution{
+  font-size: 1rem;
+  color: var(--theme1-white-color);
+}
+.attribution a{
+  font-size: 1rem;
+  color: var(--theme1-white-color);
+}
+
+#calculator {
+  width: 400px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#calculator .calc {
+  width: 100%;
+  height: 6rem;
+  color: var(--theme1-white-color);
+  background-color: var(--theme1-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28px;
+}
+
+#calculator .calc .themes .switch {
+  border-radius: 100px;
+  border: none;
+  background-color: var(--theme1-keypad-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+#calculator .calc .themes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#calculator .calc .themes p{
+  margin: 0;
+  font-size: 18px;
+}
+
+#calculator .creen {
+  width: 100%;
+  height: 6rem;
+  padding-right: 2rem;
+  border-radius: 12px;
+  background-color: var(--theme1-creen-background);
+  color: var(--theme1-white-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#calculator .keypad {
+  width: 100%;
+  height: calc(100% - 12rem - 2rem);
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--theme1-keypad-background);
+
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, calc((304px / 4)));
+  grid-template-rows: repeat(5, calc((364px / 5)));
+}
+
+#calculator .keypad .keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 2rem;
+  color: var(--theme1-dark-blue-color);
+  background-color: var(--theme1-white-key-backgorund);
+  box-shadow: inset 0 -2px 0 1px var(--theme1-white-key-shadow);
+  cursor: pointer;
+}
+
+#calculator .keypad #reiniciar,
+#calculator .keypad #borrar {
+  background-color: var(--theme1-blue-key-background);
+  box-shadow: inset 0 -2px 0 1px var(--theme1-blue-key-shodow);
+  color: var(--theme1-white-color);
+  font-size: 1.5rem;
+}
+#calculator .keypad #reiniciar,
+#calculator .keypad #total {
+  grid-column: span 2;
+}
+
+#calculator .keypad #total {
+  background-color: var(--theme1-red-key-background);
+  box-shadow: inset 0 -2px 0 1px var(--theme1-red-key-shodow);
+  color: var(--theme1-white-color);
+  font-size: 1.5rem;
+}
+
+/* #calculator .keypad .keys:hover {
+  background-color: hsl(32, 16%, 82%);
+}
+#calculator .keypad #total:hover {
+  background-color: hsl(6, 63%, 43%);
+}
+#calculator .keypad #reiniciar:hover,
+#calculator .keypad #borrar:hover {
+  background-color: hsl(226, 26%, 48%);
+} */
+
+
+@media screen and (max-width: 420px) {
+
+  .attribution{
+    font-size: .7rem;
+    color: var(--theme1-white-color);
+  }
+  .attribution a{
+    font-size: .7rem;
+    color: var(--theme1-white-color);
+  }
+
+  #calculator {
+    width: 340px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #calculator .calc {
+    width: 100%;
+    height: 5rem;
+    color: var(--theme1-white-color);
+    background-color: var(--theme1-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+
+  #calculator .calc .themes .switch {
+    border-radius: 100px;
+    border: none;
+    background-color: var(--theme1-keypad-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+
+  #calculator .calc .themes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  #calculator .calc .themes p{
+    margin: 0;
+    font-size: 16px;
+  }
+
+  #calculator .creen {
+    width: 100%;
+    height: 5rem;
+    padding-right: 2rem;
+    border-radius: 12px;
+    background-color: var(--theme1-creen-background);
+    color: var(--theme1-white-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #calculator .keypad {
+    width: 100%;
+    height: calc(100% - 10rem - 2rem);
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: var(--theme1-keypad-background);
+
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, calc(245px / 4));
+    grid-template-rows: repeat(5, calc(246px / 5));
+  }
+
+  #calculator .keypad .keys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 26px;
+    color: var(--theme1-dark-blue-color);
+    background-color: var(--theme1-white-key-backgorund);
+    box-shadow: inset 0 -2px 0 1px var(--theme1-white-key-shadow);
+    cursor: pointer;
+  }
+
+  #calculator .keypad #reiniciar,
+  #calculator .keypad #borrar {
+    background-color: var(--theme1-blue-key-background);
+    box-shadow: inset 0 -2px 0 1px var(--theme1-blue-key-shodow);
+    color: var(--theme1-white-color);
+    font-size: 1rem;
+  }
+  #calculator .keypad #reiniciar,
+  #calculator .keypad #total {
+    grid-column: span 2;
+  }
+
+  #calculator .keypad #total {
+    background-color: var(--theme1-red-key-background);
+    box-shadow: inset 0 -2px 0 1px var(--theme1-red-key-shodow);
+    color: var(--theme1-white-color);
+    font-size: 1rem;
+  }
+
+  /* #calculator .keypad .keys:hover {
+    background-color: hsl(32, 16%, 82%);
+  }
+  #calculator .keypad #total:hover {
+    background-color: hsl(6, 63%, 43%);
+  }
+  #calculator .keypad #reiniciar:hover,
+  #calculator .keypad #borrar:hover {
+    background-color: hsl(226, 26%, 48%);
+  } */
+}
